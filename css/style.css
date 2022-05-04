@@ -1,0 +1,257 @@
+/* landing page styling */
+html {
+    scroll-behavior: smooth;
+}
+
+a:link,
+a:visited {
+    color: whitesmoke;
+}
+
+.landing-page {
+    background-color: #151412;
+    color: whitesmoke;
+    /* snap scroll experiment */
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    height: 100vh;
+    scroll-snap-align: center;
+}
+
+mark {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+}
+
+.welcome h1 {
+    font-family: var(--font);
+    font-size: var(--h1-landing-size);
+    font-weight: var(--header-weight);
+}
+
+.i-am {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5;
+    padding-left: 20%;
+    padding-right: 20%;
+    opacity: 0;
+}
+
+
+.skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5;
+    padding-left: 20%;
+    padding-right: 20%;
+    /* max-width: 1200px; */
+    opacity: 0;
+}
+
+.i-am,
+.skill p {
+    font-family: var(--font);
+    font-size: var(--h2-size);
+    font-weight: var(--header-weight);
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    opacity: 0;
+}
+
+header h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+}
+
+.bottom-landing {
+    display: flex;
+    background-color: #151412;
+    color: whitesmoke;
+    opacity: 0;
+    margin-top: 140px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hover-link {
+    height: 35px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 32px;
+    padding: 0px 5px 2px 5px;
+    border-bottom: solid 2px black;
+}
+
+.hover-link:hover {
+    border-bottom: solid 2px;
+    border-color: white;
+    padding: 0px 5px 2px 5px;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.play {
+    color: #52514e;
+}
+
+.play:hover {
+    border-bottom: solid 2px;
+    border-color: black;
+    padding: 0px 5px 2px 5px;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --h1-landing-size: 64px;
+    --h2-size: 36px;
+    --header-weight: 600;
+    --font: 'IBM Plex Mono', monospace;
+}
+
+/* work section styling */
+.my-work {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    background-color: whitesmoke;
+    /* border: 5px solid red; */
+}
+
+.work-entry1,
+.work-entry2,
+.work-entry3 {
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.thumbnail {
+    width: 25%;
+    height: 50%;
+    background: grey;
+    padding: 20px;
+    align-self: center;
+}
+
+.description {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 75%;
+    /* padding-left: 50px; */
+    padding-right: 100px;
+    padding-top: 50px;
+    font-family: var(--font);
+}
+
+.description p {
+    font-size: 20px;
+}
+
+.description h2 {
+    font-size: 24px;
+}
+
+.number-marker {
+    padding-left: 25px;
+    padding-top: 25px;
+    font-size: 24px;
+    font-family: var(--font);
+}
+
+/* media query for mobile breakpoint */
+
+@media screen and (max-width: 600px) {
+    .thumbnail {
+        display: none;
+    }
+
+    .description p {
+        display: none;
+    }
+
+    .description h2 {
+        align-self: flex-start;
+        margin: 0;
+    }
+
+    .description {
+        display: flex;
+        align-items: center;
+        padding-top: 15px;
+    }
+
+    .number-marker {
+        padding-top: 0px;
+    }
+
+    .welcome {
+        display: none;
+    }
+
+    nav>h2 {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .i-am {
+        font-size: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        line-height: 2;
+    }
+
+    .skill p {
+        font-size: 20px;
+    }
+
+    .skill {
+        padding-left: 30px;
+        padding-right: 30px;
+        line-height: 2;
+    }
+
+    .bottom-landing {
+        display: none;
+    }
+
+    .my-work {
+        height: auto;
+    }
+}

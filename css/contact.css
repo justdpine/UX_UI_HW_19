@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --h1-landing-size: 64px;
+  --h2-size: 36px;
+  --header-weight: 600;
+  --font: 'IBM Plex Mono', monospace;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px repeat(6, 1fr);
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "header header header header header header header header header header header header"
+    ". . . . . . . . . . . ."
+    ". . . contact-form contact-form contact-form contact-form contact-form contact-form . . ."
+    ". . . contact-form contact-form contact-form contact-form contact-form contact-form . . ."
+    ". . . contact-form contact-form contact-form contact-form contact-form contact-form . . ."
+    ". . . . . button button . . . . ."
+    ". . . . . . . . . . . .";
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "form-header form-header form-header"
+    "form-info-fields form-info-fields form-info-fields"
+    "form-message-body form-message-body form-message-body";
+  grid-area: contact-form;
+}
+
+.form-header {
+  grid-area: form-header;
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-header h2 {
+  font-size: var(--h2-size);
+  font-weight: var(--header-weight);
+}
+
+.form-header p {
+  font-size: 20px;
+}
+
+.form-info-fields {
+  grid-area: form-info-fields;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form-message-body {
+  grid-area: form-message-body;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px;
+  height: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.header ul {
+  display: flex;
+  list-style: none;
+}
+
+.header li {
+  padding-left: 15px;
+}
+
+.button {
+  grid-area: button;
+}
+
+html,
+body,
+.container {
+  height: 100%;
+  margin: 0;
+}
+
+input {
+  margin-bottom: 15px;
+}
+
+input#fname,
+input#lname,
+input#pnouns,
+input#subject {
+  width: 30%;
+  padding: 1px;
+  padding-left: 2px;
+  font-size: 16px;
+  font-family: var(--font);
+  background: #E9E9E8;
+}
+
+input#mail,
+input#number {
+  width: 45%;
+  padding: 1px;
+  padding-left: 2px;
+  font-size: 16px;
+  font-family: var(--font);
+  background: #E9E9E8;
+}
+
+textarea {
+  width: 100%;
+  height: 95%;
+  padding: 1px;
+  padding-left: 2px;
+  font-size: 16px;
+  font-family: var(--font);
+  resize: none;
+  background: #E9E9E8;
+}
+
+/* visual guide */
+
+/* .container * {
+  border: 1px solid red;
+  position: relative;
+}
+
+.container *:after {
+  content: attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+} */
